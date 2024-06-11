@@ -1,0 +1,52 @@
+body {
+  font-family: sans-serif;
+  background: #fcf5eb;
+
+}
+
+.container-lista {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#lista-status {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-status li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.li-status-menu{
+  display: flex;
+  background-color: #d2efe7;
+}
+#lista-status li:hover {
+  background-color: #eee;
+}
+
+#lista-status li.concluida {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.emoji {
+  font-size: 18px;
+}
+
+#adicionar-status {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,29 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas Arrastável com Emojis</title>
-    <link rel="stylesheet" href="./status.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas Arrastável com Emojis</title>
+  <link rel="stylesheet" href="./status.css">
 </head>
+
 <body>
-    <h1>Status Agora🕒⏳</h1>
+  <h1>Status Agora🕒⏳</h1>
 
-    <div class="container-status">
-        <ul id="lista-status"> Hoje 
-          <li>Venha nos visitar 🛍️!
-            <ul class="li-status-menu"><li>🎞️</li><li>☰</li></ul>
-          </li>
-          <li>Oferta relâmpago!<ul class="li-status-menu"><li>🎵</li><li>☰</li></ul></li>
-          <li>Novidade chegando👀!<ul class="li-status-menu"><li>🔠</li></li><li>☰</li></ul></li>
-          <li>Coleção de verão ☀️<ul class="li-status-menu"><li>🔤<li>☰</li></ul></li>
+  <div class="container-status">
+    <ul id="lista-status"> Hoje
+      <li>Venha nos visitar 🛍️!
+        <ul class="li-status-menu">
+          <li>🎞️</li>
+          <li>☰</li>
         </ul>
-        
-                  
+      </li>
+      <li>Oferta relâmpago!<ul class="li-status-menu">
+          <li>🎵</li>
+          <li>☰</li>
+        </ul>
+      </li>
+      <li>Novidade chegando👀!<ul class="li-status-menu">
+          <li>🔠</li>
+      </li>
+      <li>☰</li>
+    </ul>
+    </li>
+    <li>Coleção de verão ☀️<ul class="li-status-menu">
+        <li>🔤
+        <li>☰</li>
+      </ul>
+    </li>
+    </ul>
+
+
+  </div>
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">➕ Adicionar novo</button>
+  <button id="adicionar-status" onclick="adicionarStatusNovo()">➕ Adicionar novo</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <button id="adicionar-status" onclick="adicionarStatusNovo()">➕ Adicionar novo</button>
-
-    <script src="./status.js"></script>
+  <script src="./status.js"></script>
 </body>
+
 </html>

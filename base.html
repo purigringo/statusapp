@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="autocomplete" content="off">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="System.Schedule.styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="_content/Blazor.Bootstrap/blazor.bootstrap.css" rel="stylesheet">
+    <title>Listagem de Números</title>
+</head>
+
+<body>
+
+    <div class="page" b-emlsonyjps>
+        <div class="sidebar" b-emlsonyjps>
+            <div class="top-row ps-3 navbar navbar-dark" b-0wbrvcr1f3>
+                <div class="container-fluid" b-0wbrvcr1f3><a class="navbar-brand" href b-0wbrvcr1f3>System.Schedule</a>
+                </div>
+            </div>
+
+            <input type="checkbox" title="Navigation menu" class="navbar-toggler" b-0wbrvcr1f3>
+
+            <div class="nav-scrollable" onclick="document.querySelector(&#x27;.navbar-toggler&#x27;).click()"
+                b-0wbrvcr1f3>
+                <nav class="flex-column" b-0wbrvcr1f3>
+                    <div class="nav-item px-3" b-0wbrvcr1f3><a href="" class="nav-link"><span
+                                class="bi bi-house-door-fill-nav-menu" aria-hidden="true" b-0wbrvcr1f3></span> Home
+                        </a></div>
+
+                    <div class="nav-item px-3" b-0wbrvcr1f3><a href="/wpp" class="nav-link active"
+                            aria-current="page"><span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"
+                                b-0wbrvcr1f3></span> wpp status
+                        </a></div>
+
+                    <div class="nav-item px-3" b-0wbrvcr1f3><a href="counter" class="nav-link"><span
+                                class="bi bi-plus-square-fill-nav-menu" aria-hidden="true" b-0wbrvcr1f3></span> Counter
+                        </a></div>
+
+                    <div class="nav-item px-3" b-0wbrvcr1f3><a href="weather" class="nav-link"><span
+                                class="bi bi-list-nested-nav-menu" aria-hidden="true" b-0wbrvcr1f3></span> Weather
+                        </a></div>
+
+                    <div class="nav-item px-3" b-0wbrvcr1f3><a href="auth" class="nav-link"><span
+                                class="bi bi-lock-nav-menu" aria-hidden="true" b-0wbrvcr1f3></span> Auth Required
+                        </a></div>
+
+                    <div class="nav-item px-3" b-0wbrvcr1f3><a href="Account/Manage" class="nav-link"><span
+                                class="bi bi-person-fill-nav-menu" aria-hidden="true" b-0wbrvcr1f3></span>
+                            luilanna@hotmail.com</a></div>
+                    <div class="nav-item px-3" b-0wbrvcr1f3>
+                        <form action="Account/Logout" method="post" b-0wbrvcr1f3><input type="hidden"
+                                name="__RequestVerificationToken"
+                                value="CfDJ8JJeONpPGiRIrioQH6mPIKplplyQuUh7IQwqQEgCxblZ0Oc5tlZmezlkWwnbONDtggL6AkUPeTqARGggC1glltO9fa8K_epuQQnZNqJSEt8yB3PoOQK_DHJFmWKI-B8Qrt9QLTmqfzc-hV2P64OwHF8EhyJEzKAK0TeBA4L27KIF6ciMynufVosQBj97zNQr7A" />
+                            <input type="hidden" name="ReturnUrl" value="wpp" b-0wbrvcr1f3 />
+                            <button type="submit" class="nav-link" b-0wbrvcr1f3><span
+                                    class="bi bi-arrow-bar-left-nav-menu" aria-hidden="true" b-0wbrvcr1f3></span> Logout
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <main b-emlsonyjps>
+            <div class="top-row px-4" b-emlsonyjps><a href="https://docs.microsoft.com/aspnet/" target="_blank"
+                    b-emlsonyjps>About</a></div>
+
+            <article class="content px-1" b-emlsonyjps>
+                <!--Blazor:{"type":"server","prerenderId":"9fa28425aa7843e4b508e198432f7e43","key":{"locationHash":"DA9EE697BB6149EE7EF175EDDEE851C10457458B5C833116F8C1B9570B220474:0","formattedComponentKey":""},"sequence":0,"descriptor":"CfDJ8JJeONpPGiRIrioQH6mPIKoj1UUT2F9wLvwLkqGW87jkdIyepjxDyQJZXPqdnDRFocBD7ih1i\u002BUhcZpgplDh5To4MLrwtXnOChFqy7l1AGcU9cUlQx2VWk/muyM/IgooGNwiHfn2gcHF70mlM\u002B0gW5OVxqAzzgk2rhb4QFKb5A5s\u002B4kBEcDtorVH7JRkNrDSX59ecBQvHf7q8hNKNU5tdZV4JVdsrOjS8mGwjmxMs5XdhCgWCHbgY9CSUyyTIHnUmZUz\u002BZGhXAb4\u002B3pVkN8lnoVh0VKYbfbjqkpJ8t8q1XR2z2IZ23StbDC27uwvmy4oUFCOIP9K9TQMpH1edkrIlTCQx4LCAdYJStF7cEqxaUp/8ikA1neuifta2pP6Mp13noSoSNPz1fB\u002BgyyEeNKiSP8f97S3BF1VhVrxhKPlB8jGyg\u002BLmWgqhcuNVKFlhYgJhqEuX15MRmuYjxcDsfIopyA8rlewopee\u002BpQ0/lTy3MXN03xnTRzpW9PxFJZr/yOpB0CCHqrC6j4u5nRIK0PRs\u002BDvRIJDjJ2YR4BeZ28GXi2m"}-->
+
+                <div class="modal modal-page-loading fade" style="display:none" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content modal-content-page-loading">
+                            <div class="modal-body">
+                                <div class="text-center ">
+                                    <div class="spinner-border" role="status"><span
+                                            class="visually-hidden">Loading...</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="AR1EKKJO1VDMF" class="toast-container position-fixed top-50 start-50 translate-middle p-3">
+                </div>
+
+                <h3>Listagem de números</h3>
+
+                <p><button class="btn btn-primary">Adicionar Número</button></p>
+                <p><em>Loading...</em></p><!--Blazor:{"prerenderId":"9fa28425aa7843e4b508e198432f7e43"}-->
+            </article>
+        </main>
+    </div>
+
+    <script src="_framework/blazor.web.js"></script>
+    <script src="js/iframe-utils.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.umd.js"
+        integrity="sha512-gQhCDsnnnUfaRzD8k1L5llCCV6O9HN09zClIzzeJ8OJ9MpGmIlCxm+pdCkqTwqJ4JcjbojFr79rl2F1mzcoLMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+        integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="_content/Blazor.Bootstrap/blazor.bootstrap.js"></script>
+    <!-- Visual Studio Browser Link -->
+    <script type="text/javascript" src="/_vs/browserLink" async="async" id="__browserLink_initializationData"
+        data-requestId="c209d31116e649dda1c822623a1c73d8" data-requestMappingFromServer="false"
+        data-connectUrl="http://localhost:51688/cd3e17747fe24b48a2dc979299a7208b/browserLink"></script>
+    <!-- End Browser Link -->
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+</body>
+
+</html>
+<!--Blazor-Server-Component-State:CfDJ8JJeONpPGiRIrioQH6mPIKo3xRc6D21IXKqx5lD9jr4NfQ7voPtiBNz7BGtxF2MIrxlzFVqDt+TfH71gBLHwAP3tTYXFyqWS9GFzd1fRClA1ynmJVBUT9WHf2RESRzVEWFkFGeJGOkEVZKWj2d05NgypH9T4yGdlEGkddnEpbqRxZJ8ioCsq9TkgWl0n8j44J20NlPkVMGPzMWGLhlR8sCxifvT9NKX5yuADtIkJ5tq0vjc90K7Pak3E1MQkEnodcFPbqLXaaQqU9h5n/LGtw/TX2VFhu7w3WzEoXiqDF+ln6SCKjpJzVdUaA+QEssDlBqGeUXJO2PM9C+SNAcld7clos3YkBJncy1z4l5UrY+8FtYdj9zvN9DFeMp/qZC7X3GhlXLuhDg2IJjr3sq42fSnChuRS+82mMmUNcaWRzSuC4qAau/fXkNHm18KzIXTvM1IrUnzkOW2WGWFtf24ce4RwJQTBxRvcG/LyX1zoT2m9ACMdh4U9Uiq7ba0jhVe7aCLuSvbrVPOxgupnR8nGUDPi90jZe9sgJsaZ6fzNDKvkIvUtnQywtlWcjynJdBmZ7Slt6lIN4+RBAAJEm7tHocK4W9uKNq/Cwc+kYF3Nd+7z--><!--Blazor-WebAssembly-Component-State:eyJVc2VySW5mbyI6ImV5SjFjMlZ5U1dRaU9pSXdZbVF5WmpjMllpMWlZelk1TFRRNE1HWXRZbVl3TnkxaE9HTTNNemhsTkRKak5Ua2lMQ0psYldGcGJDSTZJbXgxYVd4aGJtNWhRR2h2ZEcxaGFXd3VZMjl0SW4wPSIsIl9faW50ZXJuYWxfX0FudGlmb3JnZXJ5UmVxdWVzdFRva2VuIjoiZXlKMllXeDFaU0k2SWtObVJFbzRTa3BsVDA1d1VFZHBVa2x5YVc5UlNEWnRVRWxMY0d4d2JIbFJkVlZvTjBsUmQzRlJSV2REZUdKc1dqQlBZelYwYkZwdFpYcHNhMWQzYm1KUFRrUjBaMmRNTmtGclZWQmxWSEZCVWtkblowTXhaMnhzZEU4NVptRTRTMTlsY0hWUlVXNWFUbkZLVTBWME9IbENNMUJ2VDFGTFgwUklTa1p0VjB0SkxVSTRVWEowT1ZGTVZHMXhabnBqTFdoV01sQTJORTkzU0VZNFJXaDVTa1Y2UzBGTE1GUmxRa0UwVERJM1MwbEdObU5wVFhsdWRXWldiM05SUW1vNU4zcE9VWEkzUVNJc0ltWnZjbTFHYVdWc1pFNWhiV1VpT2lKZlgxSmxjWFZsYzNSV1pYSnBabWxqWVhScGIyNVViMnRsYmlKOSJ9-->
